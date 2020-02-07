@@ -9,6 +9,9 @@ RUN echo "fs.file-max = 65535" > /etc/sysctl.conf
 
 # Nginx, Node and required packages should already be installed from the base image
 
+RUN pwd
+RUN ls
+
 # root filesystem
 COPY rootfs /
 
@@ -26,7 +29,7 @@ RUN ls
 RUN npm install --only=production
 RUN npm run-script build
 
-WORKDIR app
+RUN mkdir -p /app
 
 ADD dist                /app/dist
 ADD node_modules        /app/node_modules
