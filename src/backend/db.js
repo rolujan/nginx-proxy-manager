@@ -11,7 +11,8 @@ let data = {
         user:     config.database.user,
         password: config.database.password,
         database: config.database.name,
-        port:     config.database.port
+        port:     config.database.port,
+        ssl:     config.database.ssl
     },
     migrations: {
         tableName: 'migrations'
