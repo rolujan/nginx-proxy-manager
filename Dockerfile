@@ -19,8 +19,7 @@ RUN curl -L -o /tmp/s6-overlay-amd64.tar.gz "https://github.com/just-containers/
 # App
 ENV NODE_ENV=production
 
-RUN bin/yarn install
-RUN bin/yarn build
+RUN npm install --only=production 
 
 ADD dist                /app/dist
 ADD node_modules        /app/node_modules
