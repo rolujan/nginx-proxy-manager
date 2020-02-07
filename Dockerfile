@@ -20,7 +20,10 @@ RUN curl -L -o /tmp/s6-overlay-amd64.tar.gz "https://github.com/just-containers/
 ENV NODE_ENV=production
 
 # Build and install pacakages
-WORKDIR /bin
+RUN pwd
+WORKDIR /
+RUN pwd
+
 RUN npm install --only=production
 RUN npm run-script build
 
