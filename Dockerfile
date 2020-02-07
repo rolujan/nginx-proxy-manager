@@ -21,13 +21,13 @@ ENV NODE_ENV=production
 
 # Build and install pacakages
 RUN pwd
-WORKDIR /
-RUN pwd
+RUN ls
 
 RUN npm install --only=production
 RUN npm run-script build
 
-WORKDIR /
+WORKDIR app
+
 ADD dist                /app/dist
 ADD node_modules        /app/node_modules
 ADD src/backend         /app/src/backend
